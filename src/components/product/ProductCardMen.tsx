@@ -12,7 +12,7 @@ interface ProductCardProps {
   isNew?: boolean;        // Optional "New" badge
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({
+const ProductCardMen: React.FC<ProductCardProps> = ({
   image,
   name,
   price,
@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <Link 
-      href={`/products/${slug}`} 
+      href={`/men/${slug}`} 
       className="group block overflow-hidden rounded-lg bg-white transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-gray-400"
     >
       <div className="relative aspect-3/4 overflow-hidden">
@@ -82,4 +82,4 @@ const ProductCard: React.FC<ProductCardProps> = ({
   );
 };
 
-export default ProductCard;
+export default ProductCardMen;

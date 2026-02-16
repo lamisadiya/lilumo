@@ -1,76 +1,106 @@
-'use client'
+'use client';
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaPinterestP, FaVimeoV, FaInstagram } from 'react-icons/fa';
+import { 
+  FaInstagram, 
+  FaTiktok, 
+  FaYoutube, 
+  FaFacebookF, 
+  FaTwitter 
+} from 'react-icons/fa';
+
+import { PaymentIcon } from 'react-svg-credit-card-payment-icons';
+import Mastercard from 'react-svg-credit-card-payment-icons/mastercard';
+import Paypal from 'react-svg-credit-card-payment-icons/paypal';
+import Visa from 'react-svg-credit-card-payment-icons/visa';
+
+
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white py-12 border-t border-gray-200">
+    <footer className="bg-white pt-16 pb-10 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
-          {/* Column 1 - About The Store */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+          
+          {/* Column 1 - About */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 uppercase tracking-wide">About The Store</h4>
+            <h4 className="text-lg font-medium mb-5 uppercase tracking-wider text-gray-900">
+              About Us
+            </h4>
             <p className="text-gray-600 text-sm leading-relaxed">
-              We are design and product obsessed.<br />
-              Uncompromising in the style, quality and performance of every product we create.<br /><br />
-              This is a demonstration of the Symmetry theme for Shopify. Essentials, Outerwear & Activewear kindly donated by Varley.
+              Design and quality obsessed. We craft timeless minimalist essentials
+              with uncompromising attention to style, comfort, and durability.
+              <br /><br />
+              Organic fabrics, ethical production, built to last — because true
+              style never goes out of season.
             </p>
           </div>
 
-          {/* Column 2 - Customer Support */}
+          {/* Column 2 - Support */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 uppercase tracking-wide">Customer Support</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="/pages/customer-service" className="hover:text-black transition">Customer Service</a></li>
-              <li><a href="/policies/shipping-policy" className="hover:text-black transition">Shipping and Delivery</a></li>
-              <li><a href="/policies/returns" className="hover:text-black transition">Returns</a></li>
-              <li><a href="/pages/size-charts" className="hover:text-black transition">Size Charts</a></li>
-              <li><a href="/pages/email-signup" className="hover:text-black transition">Email Signup</a></li>
-              <li><a href="/pages/contact" className="hover:text-black transition">Contact Us</a></li>
+            <h4 className="text-lg font-medium mb-5 uppercase tracking-wider text-gray-900">
+              Support
+            </h4>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li><a href="/pages/customer-service" className="hover:text-gray-900">Customer Service</a></li>
+              <li><a href="/policies/shipping-policy" className="hover:text-gray-900">Shipping & Delivery</a></li>
+              <li><a href="/policies/returns" className="hover:text-gray-900">Returns & Exchanges</a></li>
+              <li><a href="/pages/size-charts" className="hover:text-gray-900">Size Guides</a></li>
+              <li><a href="/pages/contact" className="hover:text-gray-900">Contact Us</a></li>
             </ul>
           </div>
 
-          {/* Column 3 - Newsletter + Social Icons */}
-          <div className="lg:col-span-2 lg:pl-8">
-            <h4 className="text-lg font-semibold mb-4 uppercase tracking-wide">Newsletter</h4>
-            <p className="text-gray-600 text-sm mb-5 leading-relaxed">
-              Get 15% off your first purchase!<br />
-              Plus, be the first to know about sales, new product launches and exclusive offers!
+          {/* Column 3 - Newsletter */}
+          <div>
+            <h4 className="text-lg font-medium mb-5 uppercase tracking-wider text-gray-900">
+              Stay Updated
+            </h4>
+            <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+              Join our newsletter for 15% off your first order, exclusive launches,
+              and insider styling tips.
             </p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md">
+            <form className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
-                placeholder="Email address"
-                className="flex-1 border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black focus:ring-1 focus:ring-black"
+                placeholder="Your email address"
+                required
+                className="flex-1 border border-gray-300 px-5 py-3.5 text-sm focus:outline-none focus:border-gray-900 focus:ring-1 focus:ring-gray-900"
               />
               <button
                 type="submit"
-                className="bg-black text-white px-6 py-3 text-sm uppercase tracking-wider hover:bg-gray-900 transition"
+                className="bg-gray-900 text-white px-8 py-3.5 text-sm uppercase tracking-wider font-medium hover:bg-black"
               >
-                →
+                Subscribe
               </button>
             </form>
+          </div>
+
+          {/* Column 4 - Social + Payments */}
+          <div>
+            <h4 className="text-lg font-medium mb-5 uppercase tracking-wider text-gray-900">
+              Connect
+            </h4>
 
             {/* Social Icons */}
-            <div className="flex space-x-6 mt-8 text-gray-600">
-              <a href="https://facebook.com/yourstore" target="_blank" rel="noopener noreferrer"   className ="hover:text-black transition text-xl"><FaFacebookF/></a>
-              <a href="https://twitter.com/yourstore" target="_blank" rel="noopener noreferrer" className="hover:text-black transition text-xl"><FaTwitter/></a>
-              <a href="https://pinterest.com/yourstore" target="_blank" rel="noopener noreferrer" className="hover:text-black transition text-xl"><FaPinterestP/></a>
-              <a href="https://vimeo.com/yourstore" target="_blank" rel="noopener noreferrer" className="hover:text-black transition text-xl"><FaVimeoV/></a>
-              <a href="https://instagram.com/yourstore" target="_blank" rel="noopener noreferrer" className="hover:text-black transition text-xl"><FaInstagram/></a>
+            <div className="flex space-x-5 mb-8 text-gray-600 text-2xl">
+              <FaInstagram className="hover:text-gray-900" />
+              <FaTiktok className="hover:text-gray-900" />
+              <FaYoutube className="hover:text-gray-900" />
+              <FaFacebookF className="hover:text-gray-900" />
+              <FaTwitter className="hover:text-gray-900" />
+            </div>
+
+            {/* Payment Icons (npm-based) */}
+            <div className="flex flex-wrap items-center gap-4 opacity-80">
+              <Visa style={{ width: 40 }} />
+              <Mastercard style={{ width: 40 }} />
+              <Paypal style={{ width: 40 }} />
+              
             </div>
           </div>
         </div>
 
-        {/* Bottom Policy Links & Copyright */}
-        <div className="mt-16 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">
-            <a href="/policies/privacy-policy" className="hover:text-black transition">Privacy Policy</a>
-            <a href="/policies/cookie-policy" className="hover:text-black transition">Cookie Policy</a>
-            <a href="/policies/terms-of-use" className="hover:text-black transition">Terms of Use</a>
-            <a href="/pages/about-us" className="hover:text-black transition">About Us</a>
-            <a href="/pages/contact" className="hover:text-black transition">Contact Us</a>
-          </div>
-          <p>Copyright © {new Date().getFullYear()} Your Store Name. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-10 border-t border-gray-100 text-center text-sm text-gray-500">
+          <p>© {new Date().getFullYear()} Lilumo. All rights reserved.</p>
         </div>
       </div>
     </footer>

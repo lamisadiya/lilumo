@@ -3,77 +3,55 @@
 import React from 'react';
 
 const Hero: React.FC = () => {
-  // You can add more images for a real carousel later
-  const modelImages = [
-    '/images/blog1.webp',
-    '/images/blog1.webp', // optional second for variety
-  ];
-
-  const productImages = [
-    '/images/oversized-denim-hanger-1.jpg',
-    '/images/oversized-denim-hanger-2.jpg', // optional
-  ];
+  // In a real app, pull these from props / CMS / state for easy updates
+  const heroImages = {
+    model: '/images/blog1.webp',      // Lifestyle shot: model in natural light, layered minimally
+    product: '/images/blog1.webp',    // Clean hanger shot with subtle details visible
+  };
 
   return (
-    <section className="pt-32 pb-24 md:pb-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-16 items-center relative">
-        {/* LEFT: Model Image - slides UP */}
-        <div className="relative h-125 md:h-175 overflow-hidden rounded-lg">
-          <div className="absolute inset-0 animate-slide-up">
+    <section className="pt-28 pb-20 md:pt-40 md:pb-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+        
+        {/* LEFT: Model Image - subtle upward drift for depth */}
+        <div className="relative aspect-4/5 md:aspect-auto md:h-162.5 overflow-hidden rounded-xl shadow-lg">
+          <div className="absolute inset-0 animate-subtle-slide-up">
             <img
-              src="/images/blog1.webp" // Replace with your path
-              alt="Model wearing oversized denim jacket with floral details"
-              className="w-full h-full object-cover"
+              src={heroImages.model}
+              alt="Model in timeless oversized denim jacket – relaxed, minimalist layering for Spring 2026"
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              loading="eager"
             />
           </div>
         </div>
 
-        {/* RIGHT: Product on Hanger + Text - slides DOWN */}
-        <div className="space-y-8 md:space-y-10 text-center md:text-left">
-          <div className="relative h-125 md:h-175 overflow-hidden rounded-lg">
-            <div className="absolute inset-0 animate-slide-down">
+        {/* RIGHT: Product + Text – clean, focused, premium feel */}
+        <div className="space-y-8 md:space-y-10 text-center md:text-left flex flex-col justify-center">
+          <div className="relative aspect-square md:aspect-4/5 max-w-md mx-auto md:mx-0 overflow-hidden rounded-xl bg-gray-50 shadow-md">
+            <div className="absolute inset-0 animate-subtle-slide-down flex items-center justify-center p-6">
               <img
-                src="/images/blog1.webp" // Replace with your path
-                alt="Oversized denim jacket on hanger"
-                className="w-full h-full object-contain bg-white p-8"
+                src={heroImages.product}
+                alt="Oversized washed denim jacket on hanger – metal hardware, flap pockets, adjustable cuffs"
+                className="w-full h-full object-contain transition-transform duration-700 hover:scale-105"
               />
             </div>
           </div>
 
-          <div>
-            <h1 className="text-4xl md:text-5xl font-serif font-light tracking-wide leading-tight text-gray-800 mb-4">
-              OVERSIZED DENIM JACKET
+          <div className="space-y-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-light tracking-tight leading-tight text-gray-900">
+              Oversized Denim Jacket
             </h1>
-
-            <p className="text-gray-600 max-w-md mx-auto md:mx-0 text-lg leading-relaxed">
-              Oversized jacket in washed denim with distinctive details. Collar, pockets at front, metal dropped shoulders. Chest pockets with flap and snap buttons, side buttons, adjustable cuffs.
+            <p className="text-gray-600 text-lg sm:text-xl leading-relaxed max-w-lg mx-auto md:mx-0">
+              Effortless oversized silhouette in premium washed denim. Dropped shoulders, flap chest pockets, snap buttons, and adjustable cuffs — built for layering from late winter into spring. Timeless, comfortable, and endlessly versatile.
             </p>
-
-            <button className="mt-8 inline-block bg-black text-white px-12 py-4 text-sm uppercase tracking-wider font-medium hover:bg-gray-800 transition-colors duration-300">
-              SHOP NOW
+            <button className="mt-6 inline-flex items-center justify-center bg-black text-white px-10 py-5 text-base sm:text-lg uppercase tracking-widest font-medium hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300 shadow-md hover:shadow-lg">
+              Shop Now
             </button>
           </div>
         </div>
       </div>
 
-      {/* Add these Tailwind animations to your global CSS or tailwind.config */}
-      {/* Example: in globals.css or tailwind.config.js extend theme */}
-      {/*
-        @keyframes slide-up {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(-20%); }   // Adjust % for more/less movement
-        }
-        @keyframes slide-down {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(20%); }
-        }
-        .animate-slide-up {
-          animation: slide-up 20s linear infinite alternate;
-        }
-        .animate-slide-down {
-          animation: slide-down 20s linear infinite alternate;
-        }
-      */}
+  
     </section>
   );
 };
